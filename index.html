@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JTEC NoteBot Web</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f0f7ff; color: #333; min-height: 100vh; padding: 2rem 1rem; }
+    .container { max-width: 1200px; margin: 0 auto; text-align: center; }
+
+    #mainPage { display: block; }
+    #notesPage { display: none; padding-top: 2rem; }
+
+    .main-logo { 
+      width: 100px; height: 100px; margin-bottom: 0.5rem; 
+      animation: float 6s ease-in-out infinite; border-radius: 50%; 
+      box-shadow: 0 8px 20px rgba(37,99,235,0.2); 
+      object-fit: contain; background: white;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+    h1 { font-size: 2.4rem; color: #2563eb; margin-bottom: 3rem; font-weight: 700; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .card { background: white; border-radius: 20px; padding: 24px 16px; max-width: 210px; box-shadow: 0 10px 30px rgba(37,99,235,0.12); transition: all 0.35s ease; cursor: pointer; }
+    .card:hover { transform: translateY(-12px) scale(1.06); box-shadow: 0 25px 50px rgba(37,99,235,0.25); }
+    .card img { width: 80px; height: 80px; margin-bottom: 14px; object-fit: contain; }
+    .card p { font-size: 1.05rem; font-weight: 600; color: #1e293b; }
+
+    .social-links { margin: 2rem auto 1.5rem; display: flex; justify-content: center; gap: 25px; }
+    .social-links a { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.18); transition: all 0.3s ease; }
+    .social-links a:hover { transform: translateY(-6px) scale(1.12); }
+    .social-links img { width: 100%; height: 100%; object-fit: contain; background: white; padding: 6px; }
+
+    .ad-bottom { margin: 1rem auto 2rem; width: 728px; height: 90px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    .ad-bottom img { width: 100%; height: 100%; object-fit: cover; }
+    @media (max-width: 768px) { .ad-bottom { width: 100%; max-width: 350px; height: 70px; } }
+
+    .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 2rem; color: #2563eb; font-weight: 600; cursor: pointer; font-size: 1.1rem; }
+    .back-btn:hover { text-decoration: underline; }
+
+    .level-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; max-width: 900px; margin: 0 auto; }
+    .level-card { background: white; border-radius: 20px; padding: 2rem 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: pointer; font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; gap: 14px; }
+    .level-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(37,99,235,0.2); color: #2563eb; }
+
+    footer { margin-top: 1.5rem; color: #555; font-size: 0.95rem; font-weight: 500; }
+
+    .ad-side { position: fixed; bottom: 20px; right: 20px; width: 300px; height: 250px; z-index: 9999; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 35px rgba(0,0,0,0.25); }
+    .close-btn { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.7); color: white; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; line-height: 30px; text-align: center; cursor: pointer; }
+    .close-btn:hover { background: red; }
+    @media (max-width: 992px) { .ad-side { display: none; } }
+  </style>
+</head>
+<body>
+
+  <!-- MAIN PAGE -->
+  <div id="mainPage" class="container">
+    <img src="https://lh3.googleusercontent.com/d/1XzH91F1w3KNrHbaL_L1g70nabutY4RgZ=w1000" alt="JTEC NoteBot" class="main-logo">
+    <h1>JTEC NoteBot Web</h1>
+
+    <div class="grid">
+      <div class="card" onclick="showNotes()"><img src="https://lh3.googleusercontent.com/d/1vHhzh1ZuppXKRFLWwh5Pq5trYSe3sLek=w1000"><p>Notes</p></div>
+      <div class="card" onclick="alert('Coming Soon')"><img src="https://lh3.googleusercontent.com/d/1aQ_I6VXKywkXTOm7v2WRsWDeopLE3XbK=w1000"><p>Library</p></div>
+      <div class="card" onclick="window.open('https://forms.gle/z1DnbG3KztjHaXGw5', '_blank')">
+        <img src="https://lh3.googleusercontent.com/d/1Vmms7xN4HivvJWtSaXEq4nyPl660zYKh=w1000"><p>Submit Notes</p>
+      </div>
+      <div class="card" onclick="alert('Coming Soon')"><img src="https://lh3.googleusercontent.com/d/1WXWlimOyWH2VixgcRzTeqsiq9EmChZ2D=w1000"><p>JTEC Special</p></div>
+      <div class="card" onclick="alert('Coming Soon')"><img src="https://lh3.googleusercontent.com/d/1Rn7jjYmuZ1ilTTcUQ7p-0mFd7Ve97qMB=w1000"><p>Info</p></div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://jtec-jamalpurgovtex.com/" target="_blank"><img src="https://lh3.googleusercontent.com/d/13UTcd-zP3n4Uk4nYqS9HfOoWk5AZZb4U=w200" alt="JTEC"></a>
+      <a href="https://www.facebook.com/jtecnotebot/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+    </div>
+
+    <div class="ad-bottom">
+      <a href="#" target="_blank"><img src="https://via.placeholder.com/728x90/10b981/ffffff?text=728x90+Ad+Here" alt="Ad"></a>
+    </div>
+
+    <footer>© 2022-<script>document.write(new Date().getFullYear())</script> JTEC NoteBot Web • Made by Zawad Hossen (JTEC 1st Batch)</footer>
+  </div>
+
+  <!-- NOTES LEVEL PAGE -->
+  <div id="notesPage" class="container">
+    <div class="back-btn" onclick="showMain()">Back to Home</div>
+    <h2 style="font-size:2rem; margin-bottom:2rem; color:#2563eb;">Choose Level for Notes</h2>
+
+    <div class="level-grid">
+      <div class="level-card" onclick="window.open('https://drive.google.com/drive/folders/1Ylkx9427epI0ufkXOrDnbqILgMUp6Ghq', '_blank')">
+        Level 1
+      </div>
+      <div class="level-card" onclick="window.open('https://drive.google.com/drive/folders/1Jc1pebPDsLeCS41rs-7VwpOWJercJZli', '_blank')">
+        Level 2
+      </div>
+      <div class="level-card" onclick="window.open('https://drive.google.com/drive/u/2/folders/1-YBO7tw75eUpwiAdx_9ktMOEnp6hz6xF', '_blank')">
+        Level 3
+      </div>
+      <div class="level-card" onclick="window.open('https://drive.google.com/drive/u/2/folders/1fOD0Ot_-Ya5exdCh8LELNQc9YBw6KbhL', '_blank')">
+        Level 4
+      </div>
+    </div>
+  </div>
+
+  <!-- Side Ad -->
+  <div class="ad-side" id="sideAd">
+    <div class="close-btn" onclick="this.parentElement.style.display='none'">x</div>
+    <a href="#" target="_blank">
+      <img src="https://via.placeholder.com/300x250/8b5cf6/ffffff?text=300x250+Ad+Here" alt="Side Ad">
+    </a>
+  </div>
+
+  <script>
+    function showNotes() {
+      document.getElementById('mainPage').style.display = 'none';
+      document.getElementById('notesPage').style.display = 'block';
+    }
+    function showMain() {
+      document.getElementById('notesPage').style.display = 'none';
+      document.getElementById('mainPage').style.display = 'block';
+    }
+    setTimeout(() => { document.getElementById('sideAd').style.display = 'none'; }, 15000);
+  </script>
+
+</body>
+</html>

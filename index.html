@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JTEC NoteBot</title>
+  <title>JTEC NoteBot Web</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Poppins',sans-serif; background:#f0f7ff; color:#333; min-height:100vh; text-align:center; padding:2rem 1rem; }
     .container { max-width:1200px; margin:0 auto; }
 
+    /* Pages */
     #mainPage, #otherPage { display:block; }
     #otherPage { display:none; }
 
@@ -26,11 +27,7 @@
     .card img { width:80px; height:80px; object-fit:contain; }
     .card p { margin-top:12px; font-weight:600; font-size:1.05rem; }
 
-    .social-links { margin:2rem auto 1.5rem; display:flex; justify-content:center; gap:25px; }
-    .social-links a { width:56px; height:56px; border-radius:50%; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.18); transition:0.3s; }
-    .social-links a:hover { transform:translateY(-6px) scale(1.12); }
-    .social-links img { width:100%; height:100%; object-fit:contain; background:white; padding:6px; }
-
+    /* Other NoteBot Page – 3 Big Circles */
     .circles { display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; margin:3rem 0; }
     .circle { width:180px; height:180px; border-radius:50%; overflow:hidden; box-shadow:0 15px 40px rgba(0,0,0,0.2); transition:0.4s; cursor:pointer; }
     .circle:hover { transform:scale(1.12); box-shadow:0 25px 60px rgba(0,0,0,0.3); }
@@ -44,10 +41,10 @@
   <!-- MAIN PAGE -->
   <div id="mainPage" class="container">
     <img src="https://lh3.googleusercontent.com/d/1XzH91F1w3KNrHbaL_L1g70nabutY4RgZ=w1000" class="main-logo">
-    <h1>JTEC NoteBot</h1>
+    <h1>JTEC NoteBot Web</h1>
 
     <div class="grid">
-      <div class="card" onclick="alert('Notes page')">
+      <div class="card" onclick="alert('Notes coming soon')">
         <img src="https://lh3.googleusercontent.com/d/1vHhzh1ZuppXKRFLWwh5Pq5trYSe3sLek=w1000"><p>Notes</p></div>
       <div class="card" onclick="alert('Coming Soon')"><img src="https://lh3.googleusercontent.com/d/1aQ_I6VXKywkXTOm7v2WRsWDeopLE3XbK=w1000"><p>Library</p></div>
       <div class="card" onclick="window.open('https://forms.gle/z1DnbG3KztjHaXGw5','_blank')">
@@ -55,22 +52,14 @@
       <div class="card" onclick="alert('Coming Soon')"><img src="https://lh3.googleusercontent.com/d/1WXWlimOyWH2VixgcRzTeqsiq9EmChZ2D=w1000"><p>JTEC Special</p></div>
       <div class="card" onclick="alert('Coming Soon')"><img src="https://lh3.googleusercontent.com/d/1Rn7jjYmuZ1ilTTcUQ7p-0mFd7Ve97qMB=w1000"><p>Info</p></div>
 
+      <!-- OTHER NOTEBOT CARD -->
       <div class="card" onclick="document.getElementById('mainPage').style.display='none'; document.getElementById('otherPage').style.display='block';">
         <img src="https://lh3.googleusercontent.com/d/10f4f2Hy_W_08wXPK0w8zlfrl0B0ABuMV=w1000" alt="Other NoteBot">
         <p>Other NoteBot</p>
       </div>
     </div>
 
-    <div class="social-links">
-      <a href="https://jtec-jamalpurgovtex.com/" target="_blank">
-        <img src="https://lh3.googleusercontent.com/d/13UTcd-zP3n4Uk4nYqS9HfOoWk5AZZb4U=w200" alt="JTEC">
-      </a>
-      <a href="https://www.facebook.com/jtecnotebot/" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-      </a>
-    </div>
-
-    <footer>© 2022-<script>document.write(new Date().getFullYear())</script> JTEC NoteBot • Made by Zawad Hossen (JTEC 1st Batch)</footer>
+    <footer>© 2022-<script>document.write(new Date().getFullYear())</script> JTEC NoteBot Web • Made by Zawad Hossen</footer>
   </div>
 
   <!-- OTHER NOTEBOT PAGE -->
@@ -81,14 +70,19 @@
     <h1>Other NoteBot Resources</h1>
 
     <div class="circles">
+      <!-- 1st Circle -->
       <div class="circle" onclick="window.open('https://notebot.netlify.app/','_blank')">
-        <img src="https://lh3.googleusercontent.com/d/1_xY7e8hqFovbifwAvUpWfx-gmgwF50-L=w1000">
+        <img src="https://lh3.googleusercontent.com/d/1_xY7e8hqFovbifwAvUpWfx-gmgwF50-L=w1000" alt="NoteBot">
       </div>
+
+      <!-- 2nd Circle -->
       <div class="circle" onclick="window.open('https://www.facebook.com/profile.php?id=100084645552444','_blank')">
-        <img src="https://lh3.googleusercontent.com/d/1awU6sHNKEdvp5bvu-eazosnIJWDB9QYP=w1000">
+        <img src="https://lh3.googleusercontent.com/d/1awU6sHNKEdvp5bvu-eazosnIJWDB9QYP=w1000" alt="Facebook Profile">
       </div>
+
+      <!-- 3rd Circle -->
       <div class="circle" onclick="window.open('https://www.facebook.com/tecnotebot','_blank')">
-        <img src="https://lh3.googleusercontent.com/d/1SwMo3yTTrpe7n3EvQTA3npXl1cZWgCbm=w1000">
+        <img src="https://lh3.googleusercontent.com/d/1SwMo3yTTrpe7n3EvQTA3npXl1cZWgCbm=w1000" alt="TEC NoteBot">
       </div>
     </div>
   </div>
